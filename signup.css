@@ -207,3 +207,22 @@ body{
 
 }
 
+/*chat area css code*/
+.chat-area header{
+	display: flex;
+	align-items: center;
+	padding: 18px 30px;
+}
+.chat-area header img{
+	height: 45px;
+	width: 45px;
+	margin: 0 15px;
+}
+.chat-area header .back-icon{
+	color: black;
+	font-size: 14px;
+}
+.chat-area header span{
+	font-size: 17px;
+	font-weight: bold;
+}
