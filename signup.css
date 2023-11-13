@@ -274,3 +274,25 @@ body{
 	display: flex;
 	justify-content: space-between;
 }
+.typing-area input{
+	height: 45px;
+	width: calc(100% - 58px);
+	font-size: 16px;
+	/*padding: 0 13px;
+	border-radius: 5px;
+	outline: none;
+
+*/
+	outline: none;
+	padding: 10px;
+}
+.typing-area button{
+	width: 55px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	font-size: 18px;
+	background-color: #333;
+	color: #fff;
+	cursor: pointer;
+}
