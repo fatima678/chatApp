@@ -177,7 +177,7 @@ body{
 	overflow-y: auto;
 
 }
-.users-list::-webkit-scrollbar{
+:is(.users-list,.chat-box)::-webkit-scrollbar{
 	width: 0px;
 }
 .users-list a{
@@ -230,6 +230,7 @@ body{
 	height: 500px;
 	background-color: #f7f7f7;
 	padding: 10px 30px 20px 30px;
+	overflow-y: auto;
 }
 .chat-box .outgoing{
 	display: flex;
@@ -267,4 +268,9 @@ body{
 	background-color: #fff;
 	color: #333;
 	border-radius: 18px 18px 18px 0;
+}
+.chat-area .typing-area{
+	padding: 18px 30px;
+	display: flex;
+	justify-content: space-between;
 }
