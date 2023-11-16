@@ -1,8 +1,8 @@
-const form = document.querySelector("signup form"),
+const form = document.querySelector(".signup form"),
 continueBtn = form.querySelector(".button input");
 
 form.onsubmit = (e)=>{
-	e-preventDefault();// preventing form from submitting
+	e.preventDefault();// preventing form from submitting
 
 }
 
