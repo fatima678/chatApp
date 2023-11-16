@@ -10,6 +10,16 @@ form.onsubmit = (e)=>{
 continueBtn.onclick = ()=>{
 	let xhr= new XMLHttpsRequest();
 	xhr.open("POST" ,"php/signup.php", true);
-	xhr.onload = ()=>
+	xhr.onload = ()=>{
+		if(xhr.readyState === XMLHttpsRequest.DONE){
+			if(xhr.status === 200){
+				let data=xhr.response;
+				console.log(data);
+			}
+		}
+	}
+	// we have to send form data through ajax to php
+	let formData = new FormData(form); //creating new formData object
+	xhr.send("formData");//sending form data to php 
 }  
-	xhr.send("");
+	

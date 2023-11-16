@@ -12,28 +12,28 @@
 		<section class="form signup">
 			<header>Realtime chat App</header>
 			<form action="#">
-				<div class="error-txt">This is an error message!</div>
+				<div class="error-txt">This is an error message!</div> 
 					<div class="name-details">
 			   		<div class="field input">
 						<label>First Name</label>
-						<input type="text" placeholder="First Name">
+						<input type="text" placeholder="First Name" name="fname" required>
 			   		</div>
 			   		<div class="field input">
 						<label>Last Name</label>
-						<input type="text" placeholder="Last Name">
+						<input type="text" placeholder="Last Name" name="lname" required required>
 			   		</div>
 			   		<div class="field input">
 						<label>Email Address</label>
-						<input type="text" placeholder="enter your email">
+						<input type="text" placeholder="enter your email" name="email" required>
 			   		</div>
 			   		<div class="field input">
 							<label>Password</label>
-							<input type="password" placeholder="enter your password">
+							<input type="password" placeholder="enter your password" name="password" required>
 							<i class="fa fa-eye" aria-hidden="true"></i>
 			   		</div>
 			   		<div class="field image">
 							<label>Select image</label>
-							<input type="file">
+							<input type="file" name="image" required>
 			   		</div>
 			   		<div class="field button">
 			   			<input type="submit" value="Continue to chat">
