@@ -5,8 +5,9 @@
 	$lastname= $_POST['lname'];
 	$password = $_POST['password'];
 	$email =$_POST['email'];
-	$image =$_POST['image'];
-     api ki call aw
+	// $image =$_POST['image'];
+	// $status=$_POST['status'];
+    
     if(!empty($fname) && !empty($lname) && !empty($password) && !empty($email)){
     	//lets chk if email is valid or not
     	if(filter_var($email, FILTER_VALIDATE_EMAIL)){ //if email is valid
@@ -27,8 +28,27 @@
     				if(in_array($img_ext, $extensions) === true){// if user uploaded image extension is matched with array  extension
     					$time =time();// this will return us current time
     					// lets uploadn the user uploaded img to our particular image
-    					move_uploaded_file(tmp_name, folder name);
+    					$new_img_name =$time.$img_name;
+    					move_uploaded_file(tmp_name, "images/".$img_name){// if user upload image move to our folder successfully
     					$status="Active Now";// once user signup then his status will be active
+    					$random_id =ran(time(),10000000); //creating random id for user
+
+    					//lets insert all user data inside the table
+    					$sql2 =mysqli_query($conn, "INSERT INTO users(unique_id,fname,lname,email,password,img,status)
+    										VALUE({$random_id}, '{$fname}', '{$lname}','{$email}', '{$password}', 
+    										'{$new_img_name}','{$status}')");
+    					if($sql2)// if data inserted 
+    					  $sql3=mysqli_query($conn, "SELECT * FROM users WHERE email='{$email}'");
+    					  if(mysql_num_rows($sql3) > 0){
+    					  	$row =mysqli_fetch_assoc($sql3);
+    					  	$_SESSION['unique_id'] = $row['unique_id'];// using this session we used user unique_id in other php file
+    					  	echo "success";
+    					  }
+    				     }
+    				     else{
+    				     	echo "something went wrong!";
+    				     }
+    					
     					else{
     						echo "please select an img file - jpg, jpeg, png";
     					}
